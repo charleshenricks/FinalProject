@@ -1,0 +1,150 @@
+﻿<Window x:Class="PayrollSystem.SubWindow2.UpdatePositions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PayrollSystem.SubWindow2"
+        mc:Ignorable="d"
+        Title="UpdatePositions" Height="261" Width="450"
+        Resources="{StaticResource RD_Main}"
+        
+        WindowStyle="None" AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Background="{DynamicResource ColorBlue}"
+                   MouseDown="MoveWindow">
+                <TextBlock Style="{DynamicResource DefaultFont}" 
+                            Text="Update Position" Foreground="White"
+                            FontSize="18" VerticalAlignment="Center" 
+                            Padding="10, 0,0,0" />
+            </Grid>
+
+            <Grid Grid.Row="1" Background="#D8D2CB">
+
+                <StackPanel Width="373" Height="211" Margin="0,38,0,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45" />
+                            <RowDefinition Height="45" />
+                            <RowDefinition Height="75" />
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="88" />
+                                <ColumnDefinition Width="*" /> 
+                            </Grid.ColumnDefinitions>   
+
+                            <Grid Grid.Column="0">
+                                <TextBlock Text="Description" VerticalAlignment="Center"
+                                           FontWeight="Regular"
+                                           Style="{DynamicResource DefaultFont}"/>
+                            </Grid>
+
+                            <Grid Grid.Column="1">
+                                <TextBox Style="{DynamicResource MyTextBox}"
+                                         Height="34" Width="285"
+                                         FontSize="14"
+                                         KeyDown="PositionTitle_KeyDown"
+                                         x:Name="PositionTitle"
+                                         Foreground="Black"
+                                         Padding="10, 0,10,0"
+                                         VerticalContentAlignment="Center"
+                                         VerticalAlignment="Center"/>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="88" />
+                                <ColumnDefinition Width="*" /> 
+                            </Grid.ColumnDefinitions>   
+
+                            <Grid Grid.Column="0">
+                                <TextBlock Text="Amount" VerticalAlignment="Center"
+                                           FontWeight="Regular"
+                                           Style="{DynamicResource DefaultFont}"/>
+                            </Grid>
+
+                            <Grid Grid.Column="1">
+                                <TextBox Style="{DynamicResource MyTextBox}"
+                                         FontSize="14"
+                                         Foreground="Black"
+                                         KeyDown="PositionRate_KeyDown"
+                                         Padding="10, 0,10,0"
+                                         VerticalContentAlignment="Center"
+                                         Height="34" Width="285" 
+                                         x:Name="PositionRate"
+                                         VerticalAlignment="Center"/>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="75"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="75"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0">
+                                <Button Height="34" Width="75"  Background="White"
+                                        Style="{DynamicResource MyButton}"
+                                        Click="ExitWindow">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="20" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid Grid.Column="0">
+                                            <Image Source="times-circle.png" Stretch="None" />
+                                        </Grid>
+
+                                        <Grid Grid.Column="1">
+                                            <TextBlock Text="Close" 
+                                                       FontWeight="Regular"
+                                                       FontSize="14"
+                                                       Foreground="{DynamicResource ColorBlue}"
+                                                       Style="{DynamicResource TextBlock}"/>
+                                        </Grid>
+                                    </Grid>
+                                </Button>
+                            </Grid>
+
+                            <Grid Grid.Column="2">
+                                <Button Height="34" Width="75" 
+                                        Style="{DynamicResource MyButton}" Click="SaveButton">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="20" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid Grid.Column="0">
+                                            <Image Source="/PayrollSystem;component/SubWindow/save.png" Stretch="None" />
+                                        </Grid>
+
+                                        <Grid Grid.Column="1">
+                                            <TextBlock Text="Save" 
+                                                       FontSize="14"
+                                                       FontWeight="Regular"
+                                                       Style="{DynamicResource TextBlock}"/>
+                                        </Grid>
+                                    </Grid>
+                                </Button>
+                            </Grid>
+                        </Grid>
+
+                    </Grid>
+                </StackPanel>
+            
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

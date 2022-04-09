@@ -1,0 +1,153 @@
+﻿<Window x:Class="PayrollSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PayrollSystem.Views"
+        mc:Ignorable="d"
+        Resources="{StaticResource RD_Main}"
+        Title="MainWindow" Height="763" Width="1420"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="94" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="{DynamicResource ColorBlue}"
+              MouseDown="MoveWindow">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="500"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Margin="30,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions >
+
+                    <Grid Grid.Column="0">
+                        <Border BorderThickness="0"
+                                Background="White" 
+                                CornerRadius="50" Height="50">
+                            <!-- <Image Source="" Stretch="None" /> -->
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Column="1">
+                        <TextBlock Text="Name Here"
+                                   x:Name="NameHere"
+                                    VerticalAlignment="Center"
+                                    Padding="20, 0,0,0"
+                                    Foreground="White" 
+                                    FontWeight="Regular"
+                                    FontSize="20"
+                                    Style="{DynamicResource DefaultFont}"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1" Background="{DynamicResource ColorGray}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Style="{DynamicResource MyBorderLayout}"
+                    Width="186" Height="650" Margin="13, 11, 6, 8"
+                    Grid.Column="0">
+
+                <Grid Margin="13,13, 13, 13"> 
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="570" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0">
+                        <Button Style="{DynamicResource MyButton}"
+                            Width="159" Height="39" FontWeight="Regular"
+                            x:Name="EmployeeButton"
+                            Click = "EmployeePage">
+                            Employee
+                        </Button>
+
+                        <Button Style="{DynamicResource MyButton}"
+                            Width="159" Height="39" FontWeight="Regular"
+                            Background="#E7E8E9" Foreground="Black" Margin="0, 6, 0, 0"
+                            x:Name="PositionButton"
+                            Click = "PositionPage">
+                            Positions
+                        </Button>
+
+                        <Button Style="{DynamicResource MyButton}"
+                            Width="159" Height="39" FontWeight="Regular"
+                            Background="#E7E8E9" Foreground="Black" Margin="0, 6, 0, 0"
+                            x:Name="CashAdvanceButton"
+                            Click = "CashAdvancePage">
+                            Cash Advance
+                        </Button>
+
+                        <Button Style="{DynamicResource MyButton}"
+                            Width="159" Height="39" FontWeight="Regular"
+                            Background="#E7E8E9" Foreground="Black" Margin="0, 6, 0, 0"
+                            x:Name="DeductionButton"
+                            Click = "DeductionPage">
+                            Deductions
+                        </Button>
+
+                        <Button Style="{DynamicResource MyButton}"
+                            Width="159" Height="39" FontWeight="Regular"
+                            Background="#E7E8E9" Foreground="Black" Margin="0, 6, 0, 0"
+                            x:Name="PayrollButton"
+                            Click = "PayrollPage">
+                            Payroll
+                        </Button>
+                    </StackPanel>
+                    
+                    <Button Style="{DynamicResource MyButton}" Grid.Row="1"
+                            Width="159" Height="39" FontWeight="Regular"
+                            Background="#E7E8E9" Foreground="Black" Margin="0, 6, 0, 0"
+                            x:Name="SignOut"
+                            Click="ButtonSignOut">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0">
+                                <Image Source="sign-out-alt.png" Stretch="None" />
+                            </Grid>
+
+                            <Grid Grid.Column="1">
+                                <Label FontFamily="Montserrat"> Sign Out </Label>
+                            </Grid> 
+                        </Grid>
+                    </Button>
+
+                </Grid>
+            </Border>
+
+            <Border Style="{DynamicResource MyBorderLayout}"
+                    Width="1200" Height="650" Margin="6, 11, 13, 8"
+                    Grid.Column="1">
+                <Grid>
+
+                    <local:EmployeeView Visibility="Visible" x:Name="EmployeeView"/>
+                    <local:PositionView Visibility="Collapsed" x:Name="PositionView"/>
+                    <local:CashAdvanceView Visibility="Collapsed" x:Name="CashAdvanceView"/>
+                    <local:DeductionView Visibility="Collapsed" x:Name="DeductionView"/>
+                    <local:PayrollView Visibility="Collapsed" x:Name="PayrollView"/>
+
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

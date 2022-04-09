@@ -1,0 +1,128 @@
+﻿<UserControl x:Class="PayrollSystem.ListItem.PayrollItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PayrollSystem.ListItem"
+             mc:Ignorable="d" 
+             Resources="{StaticResource RD_Main}"
+             d:DesignHeight="60" d:DesignWidth="1190">
+    <Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="10" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="139" />
+                    <ColumnDefinition Width="244" />
+                    <ColumnDefinition Width="168" />
+                    <ColumnDefinition Width="156" />
+                    <ColumnDefinition Width="95" />
+                    <ColumnDefinition Width="111" />
+                    <ColumnDefinition Width="124" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left">
+                    <Label FontFamily="Montserrat"
+                           FontSize="16"
+                           Padding="20,0,0,0"
+                           x:Name="EmployeeID">
+                        ID Here
+                    </Label>
+                </Grid>
+
+                <Grid Grid.Column="1"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left">
+                    <Label FontFamily="Montserrat"
+                           FontSize="16"
+                           Padding="20,0,0,0"
+                           x:Name="EmployeeName">
+                        Name Here
+                    </Label>
+                </Grid>
+
+                <Grid Grid.Column="2"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left">
+                    <Label FontFamily="Montserrat"
+                           FontSize="16"
+                           Padding="20,0,0,0"
+                           x:Name="EmployeeRatePerHour">
+                        Rate Here
+                    </Label>
+                </Grid>
+
+                <Grid Grid.Column="3"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left">
+                    <TextBox Width="130" Height="25" 
+                             BorderThickness="0"
+                             FontFamily="Montserrat"
+                             FontSize="16"
+                             Background="#F5F5F5"
+                             KeyUp="EmployeeTimeWorked_KeyUp"
+                             VerticalContentAlignment="Center"
+                             x:Name="EmployeeTimeWorked"
+                             />
+                </Grid>
+
+                <Grid Grid.Column="4"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left">
+                    <Label FontFamily="Montserrat"
+                           FontSize="16"
+                           Padding="20,0,0,0"
+                           x:Name="EmployeeGross">
+                        Gross Here
+                    </Label>
+                </Grid>
+
+                <Grid Grid.Column="5"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left">
+                    <Label FontFamily="Montserrat"
+                           FontSize="16"
+                           Padding="20,0,0,0"
+                           x:Name="EmployeeDeduction">
+                        Deduction Here
+                    </Label>
+                </Grid>
+
+                <Grid Grid.Column="6"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left">
+                    <Label FontFamily="Montserrat"
+                           FontSize="16"
+                           Padding="20,0,0,0"
+                           x:Name="EmployeeCashAdvance">
+                        Cash Here
+                    </Label>
+                </Grid>
+                
+                <Grid Grid.Column="7"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left">
+                    <Label FontFamily="Montserrat"
+                           FontSize="16"
+                           Padding="20,0,0,0"
+                           x:Name="EmployeeNetPay">
+                        Net Pay Here
+                    </Label>
+                </Grid>
+
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Label Style="{DynamicResource Form_Line}" Width="1180" 
+                       Background="{DynamicResource ColorGray}"/>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

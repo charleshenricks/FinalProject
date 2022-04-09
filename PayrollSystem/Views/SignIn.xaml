@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="PayrollSystem.Views.SignIn"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PayrollSystem.Views"
+             mc:Ignorable="d" 
+             
+             d:DesignHeight="393" d:DesignWidth="833">
+    <Grid>
+        <Border Width="366" Height="233" Background="White"
+                CornerRadius="20">
+            <Grid>
+
+                <StackPanel Margin="71, 27,71,18">
+
+                    <TextBlock HorizontalAlignment="Center"
+                               Style="{DynamicResource DefaultFont}">
+                            <Span Foreground="{DynamicResource ColorBlue}">
+                                ADMIN LOG IN
+                            </Span>
+
+                    </TextBlock>
+
+                    <Label Style="{DynamicResource Line}"
+                               Margin="0,10,0,0" />
+                            
+
+                    <TextBox BorderThickness="0" Margin="0,30,0,0"
+                                 Style="{DynamicResource MyTextBox}"
+                                 Text="Username"
+                                MaxLength="100"
+                                 KeyDown="UserBox_KeyDown"
+                                 KeyUp="ResetBox"
+                                 x:Name="UserBox"/>
+
+                    <Label Style="{DynamicResource Form_Line}" />
+
+                    <PasswordBox BorderThickness="0" Margin="0,30,0,0"
+                                 Style="{DynamicResource MyPasswordBox}"
+                                 Password="Password"
+                                 MaxLength="100"
+                                 KeyDown="PasswordBox_KeyDown"
+                                 KeyUp="ResetBox"
+                                 x:Name="PasswordBox"/>
+
+                    <Label Style="{DynamicResource Form_Line}" />
+
+                    <Grid Margin="0,25,0,0">
+                        <Button Style="{DynamicResource MyButton}"
+                                    FontSize="13" Click="SignInButton"
+                                    Width="88" Height="29">
+                            Sign In
+                        </Button>
+                    </Grid>
+
+                </StackPanel>
+
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl> 

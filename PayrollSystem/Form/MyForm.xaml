@@ -1,0 +1,62 @@
+﻿<Window x:Class="PayrollSystem.Form.MyForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PayrollSystem.Views"
+        mc:Ignorable="d"
+        Resources="{StaticResource RD_Main}"
+        Title="MyForm" Height="448" Width="833"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" MouseDown="MoveWindow"
+              Background="{DynamicResource ColorBlue}">
+
+              <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Button Background="Transparent" Click="ExitWindow"
+                            Style="{DynamicResource MyButton}">
+                        <Image Source="times-circle.png" Stretch="None" />
+                    </Button>
+                </Grid>
+
+              <Grid Grid.Column="1">
+                <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                    <Button Style="{DynamicResource MyButton}"
+                            Width="120"
+                            Click="SignInPage">
+                        Sign In
+                    </Button>
+                    <Button Style="{DynamicResource MyButton}"
+                            Width="120"
+                            Click="SignUpPage">
+                        Sign Up
+                    </Button>
+                </StackPanel>
+              </Grid>
+              </Grid>
+            
+        </Grid>
+
+        <Grid Grid.Row="1"
+              Background="{DynamicResource ColorGray}">
+           
+            <local:SignIn Visibility="Visible" x:Name="SignInView"/>
+            <local:SignUp Visibility="Collapsed" x:Name="SignUpView"/>
+
+        </Grid>
+    </Grid>
+</Window>
